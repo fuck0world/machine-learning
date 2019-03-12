@@ -19,16 +19,16 @@ def calcShannonEnt(dataSet):
             # keys()方法返回字典中的键 
             labelCounts[currentLabel] = 0 
             # 如果labelCounts中没有currentLabel，则添加一个以currentLabel为键的键值对，值为0 
-            labelCounts[currentLabel] += 1 
-            # 将labelCounts中类型为currentLabel值加1 
-            shannonEnt = 0.0 
-            for key in labelCounts: 
-                # 根据熵的公式进行累加 
-                prob = float(labelCounts[key])/numEntries 
-                # 计算每种数据类别出现的概率 
-                shannonEnt -= prob * log(prob, 2) 
-                # 根据定义的公式计算信息 
-            return shannonEnt
+        labelCounts[currentLabel] += 1 
+        # 将labelCounts中类型为currentLabel值加1
+    shannonEnt = 0.0 
+    for key in labelCounts: 
+        # 根据熵的公式进行累加 
+        prob = float(labelCounts[key])/numEntries 
+        # 计算每种数据类别出现的概率 
+        shannonEnt -= prob * log(prob, 2) 
+        # 根据定义的公式计算信息 
+    return shannonEnt
 
 # 按照给定特征划分数据集 
 # dataSet：给定数据集 
